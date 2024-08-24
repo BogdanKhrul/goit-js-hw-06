@@ -13,8 +13,9 @@ class Storage {
   }
 
   removeItem(itemToRemove) {
-    if (this.#items.includes(itemToRemove)) {
-      this.#items.splice(itemToRemove, 1);
+    const index = this.#items.indexOf(itemToRemove);
+    if (index !== -1) {
+      this.#items.splice(index, 1);
     }
   }
 }
@@ -30,3 +31,4 @@ console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
 
 storage.removeItem('Scaner');
 console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
+
